@@ -28,20 +28,23 @@ namespace Console_Project_Odd_or_Even
             {
                 total = PositiveInteger();
                 if (total == 0)
-                    reply = "y"; //"break;" will also break out of the loop
+                    break;
                 else
                 {
-
-
-
                     WriteLine($"The total of those numbers is {total}");
 
                     even = OddOrEven(total);
 
                     if (even == true)
+                    {
                         WriteLine("That number is even.");
+                        evenTotal++;
+                    }
                     else
+                    {
                         WriteLine("That number is odd.");
+                        oddTotal++;
+                    }
 
                     Write("Do you want to continue? (y/n)");
                     reply = ReadLine();
@@ -89,6 +92,5 @@ namespace Console_Project_Odd_or_Even
 
             return even;
         }
-
     }
 }
