@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,18 +27,25 @@ namespace Console_Project_Odd_or_Even
             do //exit loop with y/n
             {
                 total = PositiveInteger();
-
-                WriteLine($"The total of those numbers is {total}");
-
-                even = OddOrEven(total);
-
-                if (even == true)
-                    WriteLine("That number is even.");
+                if (total == 0)
+                    reply = "y"; //"break;" will also break out of the loop
                 else
-                    WriteLine("That number is odd.");
+                {
 
-                Write("Do you want to continue? (y/n)");
-                reply = ReadLine();
+
+
+                    WriteLine($"The total of those numbers is {total}");
+
+                    even = OddOrEven(total);
+
+                    if (even == true)
+                        WriteLine("That number is even.");
+                    else
+                        WriteLine("That number is odd.");
+
+                    Write("Do you want to continue? (y/n)");
+                    reply = ReadLine();
+                }
             } while (reply == "y");
 
             WriteLine($"Number of even totals: {evenTotal}");
@@ -62,7 +70,7 @@ namespace Console_Project_Odd_or_Even
                 {
                     total += num;
                 }
-            } while (num > 0);
+            } while (num != 0);
 
             return total;
         }
