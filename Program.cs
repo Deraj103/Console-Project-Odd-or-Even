@@ -14,9 +14,7 @@ namespace Console_Project_Odd_or_Even
     {
         static void Main(string[] args)
         {
-            int num;
             int total;
-            int remainder = 0;
             bool even;
             int evenTotal = 0;
             int oddTotal = 0;
